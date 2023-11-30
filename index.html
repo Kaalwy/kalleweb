@@ -5,7 +5,146 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KalleWeb</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    body, h1, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #24283b;
+  color: #c0caf5;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+  background-color: #7289DA;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.left-content {
+  flex: 1;
+  text-align: center;
+}
+
+.right-content {
+  flex: 1;
+  text-align: left;
+  margin-left: 20px;
+  padding-top: 40px;
+}
+
+.bot-icon {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background-color: #ffffff;
+  margin: 0 auto 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bot-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.invite-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #7aa2f7;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 18px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.invite-button:hover {
+  background-color: #9ece6a;
+}
+
+.video-container {
+  text-align: center;
+  margin-top: 20px;
+  max-height: 500px;
+}
+
+.video-container iframe {
+  width: 100%;
+  max-width: 800px;
+  max-height: 100%;
+}
+
+.scroll-indicator {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  opacity: 100;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.arrow {
+  width: 20px;
+  height: 20px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  display: inline-block;
+  animation: bounce 2s infinite;
+}
+
+.scroll-indicator {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(10px);
+  }
+  60% {
+    transform: translateY(5px);
+  }
+}
+  </style>
 </head>
 <body>
   <nav class="navbar">
@@ -16,7 +155,7 @@
   <div class="container">
     <div class="left-content">
       <div class="bot-icon">
-        <img src="/images/Kalle.jpg" alt="Bot Icon">
+        <img src=./images/Kalle.jpg alt="Bot Icon">
       </div>
     </div>
     <div class="right-content">
@@ -36,6 +175,17 @@
     <h2 class="video-title">Learn How to Use</h2>
     <iframe width="560" height="450" src="https://www.youtube-nocookie.com/embed/d4TJoOiE8jo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </div>
-  <script src="/src/script.js"></script>
+  <script>
+    window.addEventListener("mousemove", function () {
+      const scrollIndicator = document.querySelector(".scroll-indicator");
+      if (window.scrollY === 0) {
+        scrollIndicator.style.opacity = "1";
+        scrollIndicator.style.pointerEvents = "auto";
+      } else {
+        scrollIndicator.style.opacity = "0";
+        scrollIndicator.style.pointerEvents = "none";
+      }
+    });
+  </script>
 </body>
 </html>
