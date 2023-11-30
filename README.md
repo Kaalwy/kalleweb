@@ -1,2 +1,2 @@
 # kalleweb
-Kalle is my discord bot, and this is Kalle's website
+Hello, this is my discord bot site and I hope someone can find it useful.
