@@ -1,4 +1,4 @@
-window.addEventListener("scroll", function () {
+window.addEventListener("mousemove", function () {
   const scrollIndicator = document.querySelector(".scroll-indicator");
   if (window.scrollY === 0) {
     scrollIndicator.style.opacity = "1";

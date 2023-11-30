@@ -102,9 +102,9 @@ body {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  opacity: 0;
+  opacity: 100;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease;
 }
 
 .arrow {
